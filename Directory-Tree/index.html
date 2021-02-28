@@ -1,0 +1,124 @@
+<!--
+    d. pseudo selectors
+
+        - Locatin pseudo-classes
+            * :link
+            * :visited
+            * :target
+
+        - User action
+            * :hover
+            * :active
+            * :focus
+
+        -The input
+            * :checked
+            * :valid
+            * :invalid
+            
+        - Tree-structural
+            * :first-child
+            * :nth-child(n)
+            * :last-child
+        
+        - Elemens
+            * ::before
+            * ::after
+            
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Directory Tree | CSS Pseudo Selectors</title>
+        <style>
+            body{
+                background-color: #222;
+            }
+        .tree{
+            color: white;
+            font-family: Arial;
+            font-size: 64px;
+        }
+        .folder{
+            /* NEW */
+           /* height: 18px; */
+            line-height: 18px;
+            padding: 24px 0 24px 72px;
+
+            background-image: url(images/Places-folder-blue-icon.png);
+            background-repeat: no-repeat;
+            list-style-type: "┠";
+            
+            
+        }
+        /* NEW */
+        .file{
+            /* NEW */
+           /* height: 18px; */
+            line-height: 18px;
+            padding: 24px 0 24px 72px;
+
+            background-image: url(images/Actions-document-properties-icon.png);
+            background-repeat: no-repeat;
+            list-style-type: "┠";
+            
+            
+        }
+        .file:last-child{
+            list-style-type: "┖";
+        }
+
+        .folder:last-child{
+            list-style-type: "┖";
+        }
+        .empty{
+            background-image: url(images/Places-folder-blue-icon.png);
+        }
+        .name{
+            font-size: 18px;
+        }
+        .folder:hover{
+            background-image: url(images/Actions-document-open-icon.png);
+            color: rgb(90, 179, 209);
+        }
+        .file:hover{
+            background-image: url(images/Apps-fontforge-icon.png);
+            color: rgb(90, 179, 209);
+        }
+        </style>
+    </head>
+    <body>
+        
+        <ul class="tree">
+            <li class="folder">
+                <div class="name">PROJECT [DONE]
+
+                </div>
+                <!-- nested lists -->
+                <ul class="tree">
+                    <li class="file">
+                        <div class="name"> File 1 </div>
+                    </li>
+                    <li class="file">
+                       <div class="name"> File 2 </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="folder">
+                <div class="name">PROJECT [NOW]
+                </div>            
+            </li>
+            <li class="folder empty">
+                <div class="name">PROJECT [TBD]
+                </div>            
+            </li>
+        </ul>
+
+        <!--
+            HW: Add hover
+        -->
+
+    </body>
+</html>
